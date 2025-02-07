@@ -5,6 +5,9 @@
 //+------------------------------------------------------------------+
 #property indicator_chart_window
 
+#import "shell32.dll"
+    int ShellExecuteA(int hwnd, string Operation, string File, string Parameters, string Directory, int ShowCmd);
+#import 
 // Parâmetros do indicador
 input int AlertInterval = 10;  // Intervalo entre alertas em segundos
 
@@ -16,6 +19,8 @@ datetime lastAlertTime = 0;
 //+------------------------------------------------------------------+
 int OnInit()
 {
+
+    Print(TERMINAL_PATH,"<--");
     Print("Indicador Par/Ímpar inicializado");
     return(INIT_SUCCEEDED);
 }
